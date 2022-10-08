@@ -5,11 +5,21 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Chat App</title>
+        <title>{% block title %}{% endblock %}Chat App</title>
 
         <script src="https://cdn.tailwindcss.com"></script>
     </head>
     <body class="bg-teal-600">
-        Django hello
+        <nav class="flex items-center justify-between px-4 py-6 bg-teal-800">
+            <div>
+                <a href="/" class="text-xl text-white">Chat App</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <a href="/login/" class="text-white hover:text-gray-200">log in</a>
+                <a href="/signup/" class="px-5 py-3 rounded-xl text-white bg-teal-600 hover:bg-teal-700">sign up</a>
+            </div>
+        </nav>
+        {% block content %}
+        {% endblock %}
     </body>
 </html>
